@@ -1,3 +1,4 @@
+/* Basic styling for the body, centering content and setting a default font */
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #ffffff;
@@ -7,12 +8,14 @@ body {
   justify-content: center;
 }
 
+/* Dropdown container positioning and sizing */
 .dropdown {
   position: relative;
   width: 20rem;
   margin: 1rem auto;
 }
 
+/* Main dropdown button styling with gradient and interactive states */
 .dropdown-btn {
   width: 100%;
   background: linear-gradient(180deg, #4D9EFF, #2E69F7);
@@ -27,12 +30,14 @@ body {
   border: none;
 }
 
+/* Container for selected options in multi-select mode */
 .selected-options {
   display: flex;
   flex-wrap: wrap;
   gap: 0.3rem;
 }
 
+/* Individual selected option (tag) styling */
 .selected-card {
   background-color: rgba(255, 255, 255, 0.9);
   color: #2E69F7;
@@ -42,10 +47,12 @@ body {
   font-size: 0.85rem;
 }
 
+/* Hover state for main dropdown button to enhance interactivity */
 .dropdown-btn:hover {
   filter: brightness(1.1);
 }
 
+/* Dropdown content styling (hidden by default, appears on interaction) */
 .dropdown-content {
   position: absolute;
   background-color: #ffffff;
@@ -64,12 +71,14 @@ body {
   overflow-y: auto;
 }
 
+/* Makes the dropdown content visible when activated */
 .dropdown-content.open {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 
+/* Individual dropdown item styling */
 .dropdown-item {
   padding: 0.5rem 1rem;
   cursor: pointer;
@@ -79,14 +88,17 @@ body {
   gap: 0.5rem;
 }
 
+/* Dropdown item hover state for better user feedback */
 .dropdown-item:hover {
   background-color: #f0f7ff;
 }
 
+/* Styling to visually distinguish selected items */
 .selected .option-text {
-  font-weight: 700; /* Make selected text bold */
+  font-weight: 700; /* Bold font indicates selection */
 }
 
+/* Custom checkbox indicator styling */
 .checkbox {
   width: 1rem;
   height: 1rem;
@@ -99,25 +111,28 @@ body {
   font-size: 0.8rem;
 }
 
+/* Container for dropdown action buttons (select/deselect all, etc.) */
 .dropdown-actions {
   display: flex;
   justify-content: flex-start;
-  gap: 0.4rem; /* Adds spacing between buttons */
+  gap: 0.4rem;
   padding: 0.5rem;
   border-bottom: 1px solid rgba(77, 158, 255, 0.2);
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  flex-wrap: wrap;
 }
 
+/* Submenu for additional filters (even, odd, Fibonacci selections) */
 .aggregation-menu {
   display: flex;
-  gap: 0.4rem; /* Adds spacing between aggregation buttons */
+  gap: 0.4rem;
   padding: 0.4rem;
   flex-wrap: wrap;
   border-bottom: 1px solid rgba(77, 158, 255, 0.2);
-  background-color: #f7fbff; /* Slight background for visual separation */
+  background-color: #f7fbff;
   border-radius: 0 0 0.4rem 0.4rem;
 }
 
+/* Action button styling within the dropdown menus */
 .action-btn {
   background-color: #4D9EFF;
   color: #ffffff;
@@ -126,13 +141,15 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
   font-size: 0.85rem;
-  white-space: nowrap; /* Prevent text wrapping */
+  white-space: nowrap;
 }
 
+/* Hover state for action buttons */
 .action-btn:hover {
   filter: brightness(1.2);
 }
 
+/* General button reset to remove default browser styling */
 button {
   border: none;
 }

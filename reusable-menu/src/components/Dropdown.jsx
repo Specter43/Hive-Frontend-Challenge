@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 
+// Dropdown Component
 const Dropdown = ({
   options = [],
   isMultiSelect = false,
@@ -7,12 +8,35 @@ const Dropdown = ({
   onChange,
   placeholder = "Select...",
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isAggregationOpen, setIsAggregationOpen] = useState(false);
-  const dropdownRef = useRef(null);
+  // #region State and References
+
+  const [isOpen, setIsOpen] = useState(false);                  // Tracks if dropdown is open or closed
+  const [isAggregationOpen, setIsAggregationOpen] = useState(false);  // Tracks if aggregation submenu is open
+  const dropdownRef = useRef(null);                             // Reference to detect clicks outside the dropdown
+
+  // #endregion
+
+  // #region Dropdown Visibility Management
 
   const toggleDropdown = () => setIsOpen(prev => !prev);
 
+  useEffect(() => {
+    const clickOutside = e => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsOpen(false);
+        setIsAggregationOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', clickOutside);
+    return () => document.removeEventListener('mousedown', clickOutside);
+  }, []);
+
+  // #endregion
+
+  // #region Option Handling Functions
+
+  // Handles option selection logic based on single/multi-select
   const handleOptionClick = (option) => {
     if (isMultiSelect) {
       onChange(
@@ -26,42 +50,43 @@ const Dropdown = ({
     }
   };
 
+  // Removes a selected option (multi-select mode)
   const removeSelectedOption = (optionToRemove) => {
     onChange(selectedOptions.filter(option => option !== optionToRemove));
   };
 
+  // Selects all options
   const selectAll = () => onChange([...options]);
+
+  // Deselects all options
   const deselectAll = () => onChange([]);
 
+  // Selects even-indexed options
   const selectEven = () => onChange(options.filter((_, idx) => idx % 2 === 1));
+
+  // Selects odd-indexed options
   const selectOdd = () => onChange(options.filter((_, idx) => idx % 2 === 0));
 
+  // Selects options at Fibonacci positions
   const selectFibonacci = () => {
     const isPerfectSquare = (n) => {
       const sqrt = Math.sqrt(n);
       return sqrt === Math.floor(sqrt);
     };
-  
+
     const isFibonacci = (num) => {
       return (
         isPerfectSquare(5 * num * num + 4) ||
         isPerfectSquare(5 * num * num - 4)
       );
     };
-  
+
     onChange(options.filter((_, idx) => isFibonacci(idx + 1)));
   };
 
-  useEffect(() => {
-    const clickOutside = e => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setIsOpen(false);
-        setIsAggregationOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', clickOutside);
-    return () => document.removeEventListener('mousedown', clickOutside);
-  }, []);
+  // #endregion
+
+  // #region Render Selected Options Display
 
   const renderSelectedOptions = () => {
     if (!selectedOptions.length) return placeholder;
@@ -86,6 +111,10 @@ const Dropdown = ({
 
     return selectedOptions[0];
   };
+
+  // #endregion
+
+  // #region Component Rendering
 
   return (
     <div className="dropdown" ref={dropdownRef}>
@@ -114,6 +143,7 @@ const Dropdown = ({
             )}
           </>
         )}
+
         {options.map(option => (
           <div
             key={option}
@@ -131,6 +161,8 @@ const Dropdown = ({
       </div>
     </div>
   );
+
+  // #endregion
 };
 
 export default Dropdown;
