@@ -1,0 +1,138 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown {
+  position: relative;
+  width: 20rem;
+  margin: 1rem auto;
+}
+
+.dropdown-btn {
+  width: 100%;
+  background: linear-gradient(180deg, #4D9EFF, #2E69F7);
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+}
+
+.selected-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.selected-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #2E69F7;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.dropdown-btn:hover {
+  filter: brightness(1.1);
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: #ffffff;
+  color: #333;
+  width: 100%;
+  margin-top: 0.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(77, 158, 255, 0.2);
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.5rem);
+  transition: all 0.2s ease;
+  z-index: 10;
+  max-height: 15rem;
+  overflow-y: auto;
+}
+
+.dropdown-content.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f7ff;
+}
+
+.selected .option-text {
+  font-weight: 700; /* Make selected text bold */
+}
+
+.checkbox {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #2E69F7;
+  border-radius: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2E69F7;
+  font-size: 0.8rem;
+}
+
+.dropdown-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.4rem; /* Adds spacing between buttons */
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(77, 158, 255, 0.2);
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.aggregation-menu {
+  display: flex;
+  gap: 0.4rem; /* Adds spacing between aggregation buttons */
+  padding: 0.4rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(77, 158, 255, 0.2);
+  background-color: #f7fbff; /* Slight background for visual separation */
+  border-radius: 0 0 0.4rem 0.4rem;
+}
+
+.action-btn {
+  background-color: #4D9EFF;
+  color: #ffffff;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.action-btn:hover {
+  filter: brightness(1.2);
+}
+
+button {
+  border: none;
+}
