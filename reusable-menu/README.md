@@ -2,6 +2,10 @@
 
 A flexible, reusable, and fully controlled dropdown menu component built with React, supporting both single and multi-select functionalities, optimized for GitHub Codespaces and collaborative development.
 
+<p align="center">
+  <img src="public/README-sample.png" alt="Dropdown Component Screenshot" width="600"/>
+</p>
+
 ## Key Features
 
 - **Single & Multi-Select:** Seamlessly switch between single-selection and multi-selection modes.
@@ -46,7 +50,10 @@ src/
 ├── components/
 │   └── Dropdown.jsx
 ├── App.js
-└── index.js
+├── App.css
+├── index.js
+├── index.css
+└── ...
 ```
 ---
 
