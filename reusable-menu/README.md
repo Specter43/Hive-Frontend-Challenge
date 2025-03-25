@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Customizable React Dropdown Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A flexible, reusable, and fully controlled dropdown menu component built with React, supporting both single and multi-select functionalities, optimized for GitHub Codespaces and collaborative development.
 
-## Available Scripts
+## Key Features
 
-In the project directory, you can run:
+- **Single & Multi-Select:** Seamlessly switch between single-selection and multi-selection modes.
+- **Controlled Component:** Manage dropdown state externally with React state, ensuring predictability and ease of use.
+- **Selection Utilities:**
+  - Select/Deselect All
+  - Select Even/Odd
+  - Select Fibonacci-indexed options
+- **Dynamic Filtering:** Efficiently manage extensive option sets with built-in aggregation filters.
+- **Click Outside Detection:** Automatic dropdown closure on external clicks enhances usability.
+- **Customizable Placeholder:** Enhance user clarity with configurable placeholders.
+- **Responsive Design:** Optimized for various devices and screen sizes.
 
-### `npm start`
+## Quickstart with GitHub Codespaces
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Click on **Code** on the GitHub repository page.
+2. Select **Open with Codespaces** > **New codespace**.
+3. Your environment will automatically set up.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Alternatively, clone the repository locally:
 
-### `npm test`
+```bash
+git clone https://github.com/Specter43/Hive-Frontend-Challenge.git
+cd reusable-menu
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Development
 
-### `npm run build`
+Run the development server in Codespaces:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Your app will automatically be available on the port forwarded by GitHub Codespaces.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Structure
 
-### `npm run eject`
+```
+src/
+├── components/
+│   └── Dropdown.jsx
+├── App.js
+└── index.js
+```
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Built with ❤️ using React and Create React App, optimized for GitHub Codespaces.
